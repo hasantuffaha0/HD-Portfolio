@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* body */
+    --BGCOLOR: linear-gradient(135deg, rgb(250, 250, 250), rgb(147, 148, 165));
+    --HEIGHT: 100vh;
+    --TEXT-SHADOW: 0.2px 0.2px 0.2px black;
+    --BADDING: 20px;
+    /* .box */
+    --BOX-BGCOLOR: rgb(250, 250, 250);
+    --BOX-SHADOW: 10px 10px 10px -8px rgb(72, 75, 106);
+    --TRANSITION: all .3s ease-in-out;
+    /* image */
+    --BORDER-RADIUS: 15px;
+    --C-BORDER-RADIUS: 50%;
+    --BORDER-COLOR: rgb(72, 75, 106) rgb(72, 75, 106) rgb(147, 148, 165) rgb(147, 148, 165);
+    --TEXT-COLOR-HOVER: rgb(47, 51, 104);
+    --HR-COLOR: rgb(147, 148, 165);
+    /* form */
+    --FORM-BGCOLOR: rgb(250, 250, 250);
+    --BORDER: 1px solid rgb(147, 148, 165);
+    --TX-COLOR: rgb(72, 75, 106);
+    --TEXT-COLOR: rgb(47, 51, 104);
+}
+
+body {
+    background-image: var(--BGCOLOR);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: var(--HEIGHT);
+    padding: var(--BADDING);
+    font-size: 16px;
+    text-shadow: var(--TEXT-SHADOW);
+    line-height: 1.6;
+}
+
+.box {
+    width: 90%;
+    max-width: 350px;
+    min-height: 400px;
+    background-color: var(--BOX-BGCOLOR);
+    border-radius: 15px;
+    box-shadow: var(--BOX-SHADOW);
+    padding: var(--BADDING);
+    transition: var(--TRANSITION);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fade 0.7s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.02);
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    transition: var(--TRANSITION);
+}
+
+.image img {
+    width: 100px;
+    border-radius: var(--C-BORDER-RADIUS);
+    border: 2px solid;
+    border-color: var(--BORDER-COLOR);
+    transition: var(--TRANSITION);
+}
+
+.image p {
+    transition: var(--TRANSITION);
+}
+
+.image img:hover {
+    transform: scale(1.05);
+    filter: saturate(400%);
+}
+
+.image p:hover {
+    color: var(--TEXT-COLOR-HOVER);
+    transform: scale(1.05);
+    cursor: default;
+    filter: saturate(300%);
+    text-shadow: none;
+}
+
+hr {
+    background-color: var(--HR-COLOR);
+    padding: 0.5px;
+    margin: 5px 0px;
+}
+
+form {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex-flow: column nowrap;
+    margin: 1rem 0;
+    border-radius: var(--BORDER-RADIUS);
+    color: var(--TEXT-COLOR);
+}
+
+form input {
+    border: var(--BORDER);
+    padding: 14px;
+    margin: 0.25rem 0;
+    width: 100%;
+    border-radius: var(--BORDER-RADIUS);
+    font-size: 1.1rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: 0.3s ease;
+}
+
+form input:focus {
+    border-color: rgb(72, 75, 106);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 8px rgba(72, 75, 106, 0.5);
+}
+
+form input[type="submit"] {
+    background-color: rgb(147, 148, 165);
+    transition: var(--TRANSITION);
+    color: var(--TX-COLOR);
+}
+
+form input[type="submit"]:hover {
+    transform: scale(1.05);
+    filter: saturate(400%);
+    text-shadow: none;
+    cursor: pointer;
+}
+
+form input:hover:not(form input[type="submit"]) {
+    border: var(--BORDER);
+    background-color: rgba(147, 148, 165, 0.329);
+    opacity: 0.9;
+}
+
+form input::placeholder {
+    color: var(--TEXT-COLOR);
+    opacity: 0.8;
+}
+
+.saves {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
+
+.saves a {
+    text-decoration: none;
+    color: var(--TX-COLOR);
+    transition: var(--TRANSITION);
+}
+
+.saves label {
+    color: var(--TX-COLOR);
+    transition: var(--TRANSITION);
+}
+
+.saves a:hover,
+.saves label:hover {
+    color: var(--TEXT-COLOR-HOVER);
+    filter: saturate(200%);
+    text-shadow: none;
+}
+
+.third {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    gap: 1.5rem;
+}
+
+.third a {
+    font-size: 2rem;
+    padding: 12px;
+    border-radius: var(--C-BORDER-RADIUS);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--BOX-SHADOW);
+}
+
+.google {
+    background: #1877F2;
+}
+
+.github {
+    background: #171515;
+}
+
+.facebook {
+    background: #6c5ce7;
+}
+
+.google,
+.github,
+.facebook {
+    transition: var(--TRANSITION);
+}
+
+.google:hover,
+.github:hover,
+.facebook:hover {
+    transform: scale(1.1);
+    filter: saturate(400%);
+    box-shadow: 10px 10px 10px -8px rgb(147, 148, 165);
+}
+
+.signup {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+
+.signup a {
+    color: var(--TX-COLOR);
+    text-decoration: none;
+    transition: var(--TRANSITION);
+}
+
+.signup a:hover {
+    color: var(--TEXT-COLOR-HOVER);
+    filter: saturate(200%);
+    text-shadow: none;
+}
+
+.version {
+    color: var(--TEXT-COLOR);
+}
+
+@media screen and (min-width: 767px) {
+    .box {
+        max-width: 450px;
+        min-height: 500px;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        /* body */
+        --BGCOLOR: linear-gradient(315deg, rgb(147, 148, 165), rgb(72, 75, 106));
+        /* .box */
+        --BOX-BGCOLOR: rgb(72, 75, 106);
+        --BOX-SHADOW: 10px 10px 10px -8px rgb(47, 51, 104);
+        /* image */
+        --BORDER-COLOR: pink pink rgb(47, 51, 104) rgb(47, 51, 104);
+        --TEXT-COLOR-HOVER: rgb(250, 250, 250);
+        --HR-COLOR: rgb(147, 148, 165);
+        /* form */
+        --FORM-BGCOLOR: rgb(72, 75, 106);
+        --BORDER: 1px solid rgb(147, 148, 165);
+        --TX-COLOR: rgb(250, 250, 250);
+        --TEXT-COLOR: rgb(250, 250, 250);
+    }
+
+    form input[type="submit"] {
+        background-color: rgb(147, 148, 165);
+        color: rgb(72, 75, 106);
+    }
+
+    .google:hover,
+    .github:hover,
+    .facebook:hover {
+        box-shadow: 10px 10px 10px -8px rgb(47, 51, 104);
+    }
+
+    form input:hover:not(form input[type="submit"]) {
+        background-color: rgba(147, 148, 165, 0.315);
+        opacity: 1;
+    }
+}
