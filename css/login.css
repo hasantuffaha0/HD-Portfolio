@@ -182,6 +182,13 @@ form input::placeholder {
     transition: var(--TRANSITION);
 }
 
+.saves #remember-me {
+    accent-color: rgb(72, 75, 106);
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
 .saves a:hover,
 .saves label:hover {
     color: var(--TEXT-COLOR-HOVER);
