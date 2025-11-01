@@ -62,6 +62,8 @@ html {
     /* projects li a */
     --PROJECT-BGCOLOR: whitesmoke;
     --PROJECT-BORDER: 10px solid rgb(72, 75, 106);
+    /*.projects li a::before*/
+    --BGCOLORBEFORE: linear-gradient(to right, rgb(72, 75, 106) 0%, rgb(147, 148, 165) 100%);
     /* projects li a hover */
     /* keyframes move */
     --MOVE-PROJECT-BGCOLOR: rgba(72, 75, 106, 0.11);
@@ -213,12 +215,12 @@ body {
 }
 
 .projects li {
-    margin-bottom: 1rem;
+    margin-bottom: .1rem;
 }
 
 .projects p {
     font-size: var(--PROJECT-P-FONT-SIZE);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: var(--WIGHT-TEXT);
 }
 
@@ -232,15 +234,36 @@ body {
     color: var(--TEXT-COLOR);
     display: inline-block;
     transition:
-        transform 0.6s ease,
-        background-color 0.6s ease,
-        border-left 0.6s ease;
+        transform 0.7s ease,
+        background-color 0.7s ease,
+        border-left 0.7s ease;
+    position: relative;
+    width: 340px;
+    height: 4rem;
+    overflow: hidden;
+}
+
+.projects li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: inherit;
+    top: 0;
+    left: 0;
+    background-image: var(--BGCOLORBEFORE);
+    transition: .7s ease;
+    z-index: -1;
+}
+
+.projects li a:hover::before {
+    width: inherit;
 }
 
 .projects li a:hover {
     transform: translate(20%, -5px);
     background-color: var(--MOVE-PROJECT-BGCOLOR);
     border-left: var(--MOVE-PROJECT-BORDER);
+    color: white;
 }
 
 .contact {
@@ -493,6 +516,7 @@ footer {
         --MOVE-PROJECT-BGCOLOR: rgba(108, 92, 231, 0.1);
         --MOVE-PROJECT-BORDER: 6px solid #6c5ce7;
         --FUTURE-BGCOLOR: radial-gradient(transparent, rgba(240, 240, 240, 0.9));
+        --BGCOLORBEFORE: linear-gradient(to right, #6c5ce7 0%, #ffb199 100%);
     }
 
     .name {
