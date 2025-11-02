@@ -60,6 +60,8 @@ html {
     /* projects p */
     --PROJECT-P-FONT-SIZE: 2.5rem;
     /* projects li a */
+    --FONT-PROJECT: 2rem;
+    --WIDTH-PROJECT: 340px;
     --PROJECT-BGCOLOR: whitesmoke;
     --PROJECT-BORDER: 10px solid rgb(72, 75, 106);
     /*.projects li a::before*/
@@ -238,9 +240,10 @@ body {
         background-color 0.7s ease,
         border-left 0.7s ease;
     position: relative;
-    width: 340px;
+    width: var(--WIDTH-PROJECT);
     height: 4rem;
     overflow: hidden;
+    font-size: var(--FONT-PROJECT);
 }
 
 .projects li a::before {
@@ -385,6 +388,7 @@ footer {
         --IMAGE-PADDING: 0px 80px;
         --IMAGE-MAX-HEIGHT: 500px;
         --IMAGE-WIDTH: 350px;
+        --FONT-PROJECT: 2rem;
     }
 
     .about {
@@ -423,6 +427,8 @@ footer {
         --PADDING-COLINKS: 0;
         --FONT-SIZE-COLINKS: 2rem;
         --CONTACT-TITLE-FONT-SIZE: 1.5rem;
+        --WIDTH-PROJECT: 300px;
+        --FONT-PROJECT: 1.25rem;
     }
 
     .name {
@@ -477,6 +483,8 @@ footer {
         --PADDING-COLINKS: 0;
         --FONT-SIZE-COLINKS: 2rem;
         --CONTACT-TITLE-FONT-SIZE: 1.5rem;
+        --WIDTH-PROJECT: 240px;
+        --FONT-PROJECT: 1.1rem;
     }
 
     .name {
